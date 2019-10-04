@@ -24,7 +24,6 @@ class App extends React.Component {
   }
 
   handleSelectionLocation = city => {
-    console.log(`handleSelectionLocation ${city}`);
     this.setState({ city });
   }  
 

@@ -6,7 +6,6 @@ import './styles.css';
 const LocationList = ({ cities, onSelectedLocation }) => {
 
   const handleWeatherLocationClick = city => {
-    console.log(`handleWeatherLocationClick ${city}`);
     onSelectedLocation(city);
   };
 
@@ -27,7 +26,7 @@ const LocationList = ({ cities, onSelectedLocation }) => {
   )
 };
 
-LocationList.protoYypes = {
+LocationList.propTypes = {
   cities: PropTypes.array.isRequired,
   onSelectedLocation: PropTypes.func,
 };
