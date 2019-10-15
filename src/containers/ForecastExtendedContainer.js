@@ -5,9 +5,10 @@ import ForecastExtended from './../components/ForecastExtended';
 import { getCity, getForecastDataFromCities } from './../reducers';
 
 class ForecastExtendedContainer extends Component {
-
+  
   render() {
     const { city, forecastData } = this.props;
+    console.log(city, forecastData);
     return (
         city && 
         <ForecastExtended city={city} forecastData={forecastData}></ForecastExtended>
