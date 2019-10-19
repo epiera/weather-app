@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import reducers from './../reducers';
 
+/* TODO: Remove initial city. Check required on localistonctainer and inside of component.... */
 const initalState = {
     city: 'Buenos Aires,ar'
 };

@@ -25,11 +25,20 @@ const url_base_weather = "http://api.openweathermap.org/data/2.5/weather";
 export const setSelectedCity = value => { 
 
   // middlware
-  return dispatch => {
+  return (dispatch, getState) => {
     const api_forecast = `${url_base_forecast}?q=${value}&appid=${api_key}`;
 
     // Activar en el estado un indicador de búsqueda
     dispatch(setCity(value));
+
+    const state = getState();
+    const date = state.cities[value] && state.cities[value].forecastDataDate;
+
+    const now = new Date();
+
+    if (date && (now - date < 1* 60 * 1000)){
+      return;
+    }
 
     return fetch(api_forecast)
       .then(resolve => resolve.json())
